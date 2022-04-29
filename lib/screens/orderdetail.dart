@@ -71,13 +71,7 @@ class _OrderDetailState extends State<OrderDetail> {
             ),
           ),
         ),
-        title: Text(
-          OrderDetails.tr,
-          style: TextStyle(
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        title: Text(OrderDetails.tr,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,fontFamily: 'Poppins'),),
       ),
       body: Container(
         padding: EdgeInsets.all(10),
@@ -103,8 +97,9 @@ class _OrderDetailState extends State<OrderDetail> {
                         width: 100,
                         child: Text(
                           pickupdetails.tr,
-                          style: MyTextStyle.poppinsBold()
-                              .copyWith(color: Colors.black),
+                          style:  TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Poppins',color: Colors.black),
                         ),
                       ),
                       leading: Image.asset(
@@ -120,23 +115,16 @@ class _OrderDetailState extends State<OrderDetail> {
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(rec),
-                            )),
+                                  image: AssetImage(rec),
+                                )),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    smallDetailsContainer(
-                                      context,
-                                      widget.orderData["pickupEmail"]
-                                          .toString(),
-                                      widget.orderData["duration"].toString(),
-                                      widget.orderData["pickupAddress"]
-                                          .toString(),
-                                      widget.orderData["distance"].toString(),
-                                    ),
+                                    smallDetailsContainer(context, SentiarParis,
+                                        "11m.20s", Arrondisment, "4.8KM"),
                                   ],
                                 ),
                                 Column(
@@ -149,29 +137,29 @@ class _OrderDetailState extends State<OrderDetail> {
                                         height: 50,
                                         child: Image.asset(
                                             widget.orderData["vehicle"]
-                                                        .toString() ==
-                                                    "CAR"
+                                                .toString() ==
+                                                "CAR"
                                                 ? car
                                                 : widget.orderData["vehicle"]
-                                                            .toString() ==
-                                                        "MINI TRUCK"
-                                                    ? mini_truck
-                                                    : widget.orderData[
-                                                                    "vehicle"]
-                                                                .toString() ==
-                                                            "BIKE"
-                                                        ? cycle
-                                                        : widget.orderData[
-                                                                        "vehicle"]
-                                                                    .toString() ==
-                                                                "SCOOTER"
-                                                            ? scooter
-                                                            : widget.orderData[
-                                                                            "vehicle"]
-                                                                        .toString() ==
-                                                                    "TRUCK"
-                                                                ? truck
-                                                                : van,
+                                                .toString() ==
+                                                "MINI TRUCK"
+                                                ? mini_truck
+                                                : widget.orderData[
+                                            "vehicle"]
+                                                .toString() ==
+                                                "BIKE"
+                                                ? cycle
+                                                : widget.orderData[
+                                            "vehicle"]
+                                                .toString() ==
+                                                "SCOOTER"
+                                                ? scooter
+                                                : widget.orderData[
+                                            "vehicle"]
+                                                .toString() ==
+                                                "TRUCK"
+                                                ? truck
+                                                : van,
                                             width: 50,
                                             height: 50),
                                       ),
@@ -181,8 +169,8 @@ class _OrderDetailState extends State<OrderDetail> {
                                       style: MyTextStyle.poppins().copyWith(
                                           color: Colors.black,
                                           fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                              .size
+                                              .width *
                                               0.025,
                                           fontWeight: FontWeight.bold),
                                     )
@@ -211,13 +199,15 @@ class _OrderDetailState extends State<OrderDetail> {
                     child: ExpansionTile(
                       title: Text(
                         DeliveryDETAILS.toUpperCase().tr,
-                        style: MyTextStyle.poppinsBold()
-                            .copyWith(color: Colors.black),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppins',
+                            color: Colors.black),
                       ),
                       leading: Image.asset(
                         delivery_icon,
                         height: 106.h,
-                        width: 199.w,
+                        width: 150.w,
                       ),
                       trailing: Image.asset(dropdown, scale: 3),
                       children: <Widget>[
@@ -228,23 +218,16 @@ class _OrderDetailState extends State<OrderDetail> {
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(rec),
-                            )),
+                                  image: AssetImage(rec),
+                                )),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    smallDetailsContainer(
-                                      context,
-                                      widget.orderData["deliveryEmail"]
-                                          .toString(),
-                                      widget.orderData["duration"].toString(),
-                                      widget.orderData["deliveryAddress"]
-                                          .toString(),
-                                      widget.orderData["distance"].toString(),
-                                    ),
+                                    smallDetailsContainer(context, SentiarParis,
+                                        "11m.20s", Arrondisment, "4.8KM"),
                                   ],
                                 ),
                                 Column(
@@ -257,35 +240,35 @@ class _OrderDetailState extends State<OrderDetail> {
                                         height: 50,
                                         child: Image.asset(
                                           widget.orderData["vehicle"]
-                                                      .toString() ==
-                                                  "CAR"
+                                              .toString() ==
+                                              "CAR"
                                               ? car
                                               : widget.orderData["vehicle"]
-                                                          .toString() ==
-                                                      "MINI TRUCK"
-                                                  ? mini_truck
-                                                  : widget.orderData["vehicle"]
-                                                              .toString() ==
-                                                          "BIKE"
-                                                      ? cycle
-                                                      : widget.orderData[
-                                                                      "vehicle"]
-                                                                  .toString() ==
-                                                              "SCOOTER"
-                                                          ? scooter
-                                                          : widget.orderData[
-                                                                          "vehicle"]
-                                                                      .toString() ==
-                                                                  "TRUCK"
-                                                              ? truck
-                                                              : van,
+                                              .toString() ==
+                                              "MINI TRUCK"
+                                              ? mini_truck
+                                              : widget.orderData["vehicle"]
+                                              .toString() ==
+                                              "BIKE"
+                                              ? cycle
+                                              : widget.orderData[
+                                          "vehicle"]
+                                              .toString() ==
+                                              "SCOOTER"
+                                              ? scooter
+                                              : widget.orderData[
+                                          "vehicle"]
+                                              .toString() ==
+                                              "TRUCK"
+                                              ? truck
+                                              : van,
                                           width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                              .size
+                                              .width *
                                               .2,
                                           height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
+                                              .size
+                                              .height *
                                               .1,
                                         ),
                                       ),
@@ -295,8 +278,8 @@ class _OrderDetailState extends State<OrderDetail> {
                                       style: MyTextStyle.poppins().copyWith(
                                           color: Colors.black,
                                           fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                              .size
+                                              .width *
                                               0.025,
                                           fontWeight: FontWeight.bold),
                                     )
@@ -353,148 +336,147 @@ class _OrderDetailState extends State<OrderDetail> {
                               "# ${widget.orderData["orderId"].toString()}"),
                           isDelivery == false
                               ? GestureDetector(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => GoMap(
-                                                  pickUpLat: double.parse(widget
-                                                      .orderData["pickupLat"]),
-                                                  pickUpLong: double.parse(
-                                                      widget.orderData[
-                                                          "pickupLong"]),
-                                                  dropLat: double.parse(
-                                                      widget.orderData[
-                                                          "deliveryLat"]),
-                                                  dropLong: double.parse(
-                                                      widget.orderData[
-                                                          "deliveryLong"]),
-                                                  driverID: widget
-                                                      .orderData["driverId"]
-                                                      .toString(),
-                                                  data: widget.orderData,
-                                                  isPickup: false,
-                                                ))).then((value) {
-                                      if (mounted) {
-                                        var collection = FirebaseFirestore
-                                            .instance
-                                            .collection('orders');
-                                        collection
-                                            .doc(widget.orderData["orderId"]
-                                                .toString())
-                                            .update(
-                                              {
-                                                'trackStatus': "Picked",
-                                              },
-                                            ) // <-- Updated data
-                                            .then((_) => {
-                                                  setState(() {
-                                                    isDelivery = true;
-                                                  }),
-                                                })
-                                            .catchError((error) =>
-                                                print(' update status failed'));
-                                      }
-                                    });
+                            onTap: () async {
+                              await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => GoMap(
+                                        pickUpLat: double.parse(widget
+                                            .orderData["pickupLat"]),
+                                        pickUpLong: double.parse(
+                                            widget.orderData[
+                                            "pickupLong"]),
+                                        dropLat: double.parse(
+                                            widget.orderData[
+                                            "deliveryLat"]),
+                                        dropLong: double.parse(
+                                            widget.orderData[
+                                            "deliveryLong"]),
+                                        driverID: widget
+                                            .orderData["driverId"]
+                                            .toString(),
+                                        data: widget.orderData,
+                                        isPickup: false,
+                                      ))).then((value) {
+                                if (mounted) {
+                                  var collection = FirebaseFirestore
+                                      .instance
+                                      .collection('orders');
+                                  collection
+                                      .doc(widget.orderData["orderId"]
+                                      .toString())
+                                      .update(
+                                    {
+                                      'trackStatus': "Picked",
+                                    },
+                                  ) // <-- Updated data
+                                      .then((_) => {
+                                    setState(() {
+                                      isDelivery = true;
+                                    }),
+                                  })
+                                      .catchError((error) =>
+                                      print(' update status failed'));
+                                }
+                              });
 
-                                    FCMServices.sendFCM(
-                                      "user",
-                                      widget.orderData["userId"].toString(),
-                                      "Driver Start Naivigation",
-                                      "Driver start moving to PickUp Location",
-                                    );
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.only(
-                                        top:
-                                            MediaQuery.of(context).size.height *
-                                                0.06),
-                                    height: MediaQuery.of(context).size.height *
-                                        0.068,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.98,
-                                    decoration: BoxDecoration(
-                                        color: themeColor,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: ConfirmationSlider(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.07,
-                                        foregroundColor: Colors.white,
-                                        text: "DELIVER AT LOCATION".tr,
-                                        textStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: 'Roboto',
-                                            fontSize: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.047,
-                                            fontWeight: FontWeight.bold),
-                                        iconColor: themeColor,
-                                        backgroundShape:
-                                            BorderRadius.circular(5),
-                                        backgroundColor: themeColor,
-                                        onConfirmation: () {}),
-                                  ),
-                                )
+                              FCMServices.sendFCM(
+                                "user",
+                                widget.orderData["userId"].toString(),
+                                "Driver Start Naivigation",
+                                "Driver start moving to PickUp Location",
+                              );
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  top:
+                                  MediaQuery.of(context).size.height *
+                                      0.03),
+                              height: MediaQuery.of(context).size.height *
+                                  0.07,
+                              width: MediaQuery.of(context).size.width *
+                                  0.98,
+                              decoration: BoxDecoration(
+                                  color: themeColor,
+                                  borderRadius:
+                                  BorderRadius.circular(10)),
+                              child: ConfirmationSlider(
+                                  height:
+                                  MediaQuery.of(context).size.height *
+                                      0.07,
+                                  foregroundColor: Colors.white,
+                                  text: "PICKUP AT LOCATION".tr,
+                                  textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: MediaQuery.of(context)
+                                          .size
+                                          .width *
+                                          0.047,
+                                      fontWeight: FontWeight.bold),
+                                  iconColor: themeColor,
+                                  backgroundShape:
+                                  BorderRadius.circular(5),
+                                  backgroundColor: themeColor,
+                                  onConfirmation: () {}),
+                            ),
+                          )
                               : GestureDetector(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => GoMap(
-                                                  pickUpLat: double.parse(widget
-                                                      .orderData["pickupLat"]),
-                                                  pickUpLong: double.parse(
-                                                      widget.orderData[
-                                                          "pickupLong"]),
-                                                  dropLat: double.parse(
-                                                      widget.orderData[
-                                                          "deliveryLat"]),
-                                                  dropLong: double.parse(
-                                                      widget.orderData[
-                                                          "deliveryLong"]),
-                                                  isPickup: true,
-                                                  driverID: widget
-                                                      .orderData["driverId"]
-                                                      .toString(),
-                                                  data: widget.orderData,
-                                                )));
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.only(
-                                        top:
-                                            MediaQuery.of(context).size.height *
-                                                0.06),
-                                    height: MediaQuery.of(context).size.height *
-                                        0.068,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.98,
-                                    decoration: BoxDecoration(
-                                        color: themeColor,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: ConfirmationSlider(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.07,
-                                        foregroundColor: Colors.white,
-                                        text: DELIVERATLOCATION.tr,
-                                        textStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.047,
-                                            fontWeight: FontWeight.bold),
-                                        iconColor: themeColor,
-                                        backgroundShape:
-                                            BorderRadius.circular(5),
-                                        backgroundColor: themeColor,
-                                        onConfirmation: () {}),
-                                  ),
-                                ),
+                            onTap: () async {
+                              await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => GoMap(
+                                        pickUpLat: double.parse(widget
+                                            .orderData["pickupLat"]),
+                                        pickUpLong: double.parse(
+                                            widget.orderData[
+                                            "pickupLong"]),
+                                        dropLat: double.parse(
+                                            widget.orderData[
+                                            "deliveryLat"]),
+                                        dropLong: double.parse(
+                                            widget.orderData[
+                                            "deliveryLong"]),
+                                        isPickup: true,
+                                        driverID: widget
+                                            .orderData["driverId"]
+                                            .toString(),
+                                        data: widget.orderData,
+                                      )));
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  top:
+                                  MediaQuery.of(context).size.height *
+                                      0.03),
+                              height: MediaQuery.of(context).size.height *
+                                  0.068,
+                              width: MediaQuery.of(context).size.width *
+                                  0.98,
+                              decoration: BoxDecoration(
+                                  color: themeColor,
+                                  borderRadius:
+                                  BorderRadius.circular(10)),
+                              child: ConfirmationSlider(
+                                  height:
+                                  MediaQuery.of(context).size.height *
+                                      0.07,
+                                  foregroundColor: Colors.white,
+                                  text: DELIVERATLOCATION.tr,
+                                  textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: MediaQuery.of(context)
+                                          .size
+                                          .width *
+                                          0.047,
+                                      fontWeight: FontWeight.bold),
+                                  iconColor: themeColor,
+                                  backgroundShape:
+                                  BorderRadius.circular(5),
+                                  backgroundColor: themeColor,
+                                  onConfirmation: () {}),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -511,227 +493,236 @@ class _OrderDetailState extends State<OrderDetail> {
   Widget orderDetails(String parcelName, String weight, String totalAmount,
       String subtotal, String distance, String time, String orderid) {
     return Container(
+
         child: Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.height * 0.04,
-              right: MediaQuery.of(context).size.height * 0.04),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    ParcelName.tr,
-                    style: MyTextStyle.poppins().copyWith(
-                        fontSize: MediaQuery.of(context).size.height * 0.018,
-                        color: Colors.black),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  Text(
-                    Weight.tr,
-                    style: MyTextStyle.poppins().copyWith(
-                      fontSize: MediaQuery.of(context).size.height * 0.018,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    parcelName,
-                    style: MyTextStyle.poppins().copyWith(
-                      fontSize: MediaQuery.of(context).size.height * 0.018,
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  Text(
-                    weight,
-                    style: MyTextStyle.poppins().copyWith(
-                      fontSize: MediaQuery.of(context).size.height * 0.018,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
-        ),
-        Container(
-            height: MediaQuery.of(context).size.height * 0.1,
-            width: MediaQuery.of(context).size.width,
-            color: Color(0xffFBB03B),
-            child: Padding(
+          children: [
+            Padding(
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.height * 0.0,
-                  right: MediaQuery.of(context).size.height * 0.0,
-                  top: MediaQuery.of(context).size.height * 0.006,
-                  bottom: MediaQuery.of(context).size.height * 0.006),
+                  left: MediaQuery.of(context).size.height * 0.02,
+                  right: MediaQuery.of(context).size.height * 0.02),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.04),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(SUBTOTAL.tr,
-                            style: MyTextStyle.poppins().copyWith(
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.014,
-                              color: Colors.black,
-                            )),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.01,
-                        ),
-                        Text(TOTAL.tr,
-                            style: MyTextStyle.poppins().copyWith(
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.014,
-                              color: Colors.black,
-                            ))
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.06),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("$subtotal MNL",
-                            style: MyTextStyle.poppins().copyWith(
-                                fontSize:
-                                    MediaQuery.of(context).size.height * 0.014,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.01,
-                        ),
-                        Text("$totalAmount MNL",
-                            style: MyTextStyle.poppins().copyWith(
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.014,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ))
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.09,
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width * 0.005,
-                    color: Colors.black,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.03,
-                  ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(Distance.tr,
-                          style: MyTextStyle.poppins().copyWith(
-                            fontSize:
-                                MediaQuery.of(context).size.height * 0.014,
-                            color: Colors.black,
-                          )),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                      Text(
+                        ParcelName.tr,
+                        style:TextStyle(
+                            fontFamily: 'Poppins', fontSize: 15,
+                            color: Colors.black),
                       ),
                       SizedBox(
-                        width: 70,
-                        height: 20,
-                        child: Text(Time.tr,
-                            style: MyTextStyle.poppins().copyWith(
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.014,
-                              color: Colors.black,
-                            )),
-                      )
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      Text(
+                        Weight.tr,
+                        style: MyTextStyle.poppins().copyWith(
+                          fontSize: 15,
+                          color: Colors.black,
+                        ),
+                      ),
                     ],
                   ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.height * 0.03,
-                  ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(distance,
-                          style: MyTextStyle.poppins().copyWith(
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.014,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                      Text(
+                        parcelName,
+                        style:TextStyle(
+                            fontFamily: 'Poppins', fontSize: 15,
+                            color: Colors.black),
                       ),
-                      Text(time,
-                          style: MyTextStyle.poppins().copyWith(
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.014,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold))
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      Text(
+                        weight,
+                        style:TextStyle(
+                            fontFamily: 'Poppins', fontSize: 15,
+                            color: Colors.black),
+                      ),
                     ],
                   ),
                 ],
               ),
-            )),
-        Container(
-          margin:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.027),
-          height: MediaQuery.of(context).size.height * 0.1,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(rec2),
             ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.03),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  ORDERID.tr,
-                  style: MyTextStyle.poppins().copyWith(
-                      color: Colors.black,
-                      fontSize: MediaQuery.of(context).size.width * 0.05,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  orderid,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: MyTextStyle.poppins().copyWith(
-                      color: Colors.black,
-                      fontSize: MediaQuery.of(context).size.width * 0.05,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
             ),
-          ),
-        ),
-      ],
-    ));
+            Container(
+                height: MediaQuery.of(context).size.height * 0.1,
+                width: MediaQuery.of(context).size.width,
+                color: Color(0xffFBB03B),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.006,
+                      bottom: MediaQuery.of(context).size.height * 0.006),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.04),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(SUBTOTAL.tr,
+                                style:TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize:
+                                  MediaQuery.of(context).size.height * 0.014,
+                                  color: Colors.black,
+                                )),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.01,
+                            ),
+                            Text(TOTAL.tr,
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize:
+                                  MediaQuery.of(context).size.height * 0.014,
+                                  color: Colors.black,
+                                ))
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.06),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("\$ $subtotal",
+                                style: MyTextStyle.poppins().copyWith(
+                                    fontSize:
+                                    MediaQuery.of(context).size.height * 0.014,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.01,
+                            ),
+                            Text("\$ $totalAmount",
+                                style: MyTextStyle.poppins().copyWith(
+                                  fontSize:
+                                  MediaQuery.of(context).size.height * 0.014,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ))
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.09,
+                      ),
+                      Container(
+                        height: 50,
+                        width: MediaQuery.of(context).size.width * 0.005,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.03,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(Distance.tr,
+                              style: MyTextStyle.poppins().copyWith(
+                                fontSize:
+                                MediaQuery.of(context).size.height * 0.014,
+                                color: Colors.black,
+                              )),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.01,
+                          ),
+                          SizedBox(
+                            width: 70,
+                            height: 20,
+                            child: Text(Time.tr,
+                                style: MyTextStyle.poppins().copyWith(
+                                  fontSize:
+                                  MediaQuery.of(context).size.height * 0.014,
+                                  color: Colors.black,
+                                )),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.height * 0.03,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(distance,
+                              style: MyTextStyle.poppins().copyWith(
+                                  fontSize:
+                                  MediaQuery.of(context).size.height * 0.014,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.01,
+                          ),
+                          Text(time,
+                              style: MyTextStyle.poppins().copyWith(
+                                  fontSize:
+                                  MediaQuery.of(context).size.height * 0.014,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold))
+                        ],
+                      ),
+                    ],
+                  ),
+                )),
+            Container(
+              margin:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.024),
+              height: MediaQuery.of(context).size.height * 0.08,
+              decoration: BoxDecoration(
+                // image: DecorationImage(
+                //   image: AssetImage(rec2),
+                // ),
+                  color: white,
+                  border: Border.all(color: orange,width: 2),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.25),
+                        blurRadius: 4
+                    )
+                  ]
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.03),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      ORDERID.tr,
+                      style: MyTextStyle.poppins().copyWith(
+                          color: Colors.black,
+                          fontSize: MediaQuery.of(context).size.width * 0.05,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      orderid,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: MyTextStyle.poppins().copyWith(
+                          color: Colors.black,
+                          fontSize: MediaQuery.of(context).size.width * 0.05,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 
   Widget userProfileDetails(String profImg, String name, String city,
@@ -780,7 +771,6 @@ class _OrderDetailState extends State<OrderDetail> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: MyTextStyle.poppins().copyWith(
-                            fontFamily: 'Roboto',
                             color: Colors.black,
                             fontSize: MediaQuery.of(context).size.width * 0.04,
                             fontWeight: FontWeight.bold,
@@ -812,7 +802,7 @@ class _OrderDetailState extends State<OrderDetail> {
                           child: Container(
                             margin: EdgeInsets.only(
                                 bottom:
-                                    MediaQuery.of(context).size.height * 0.012),
+                                MediaQuery.of(context).size.height * 0.012),
                             height: MediaQuery.of(context).size.height * 0.05,
                             width: MediaQuery.of(context).size.width * 0.12,
                             decoration: BoxDecoration(
@@ -832,9 +822,9 @@ class _OrderDetailState extends State<OrderDetail> {
                         InkWell(
                           onTap: () async {
                             ChatRoomModel? chatRoomModel =
-                                await chatHandler.getChatRoom(
-                                    userProvider.userModel!.uid,
-                                    FirebaseAuth.instance.currentUser!.uid);
+                            await chatHandler.getChatRoom(
+                                userProvider.userModel!.uid,
+                                FirebaseAuth.instance.currentUser!.uid);
 
                             if (chatRoomModel != null) {
                               AppRoutes.push(
@@ -869,7 +859,7 @@ class _OrderDetailState extends State<OrderDetail> {
                           child: Container(
                             margin: EdgeInsets.only(
                                 bottom:
-                                    MediaQuery.of(context).size.height * 0.012),
+                                MediaQuery.of(context).size.height * 0.012),
                             height: MediaQuery.of(context).size.height * 0.05,
                             width: MediaQuery.of(context).size.width * 0.12,
                             decoration: BoxDecoration(
@@ -902,7 +892,7 @@ class _OrderDetailState extends State<OrderDetail> {
           ),
           Padding(
             padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03),
+            EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03),
             child: Row(
               children: [
                 Container(
@@ -923,7 +913,7 @@ class _OrderDetailState extends State<OrderDetail> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                                // color: Colors.blue,
+                              // color: Colors.blue,
                                 margin: EdgeInsets.only(
                                     top: MediaQuery.of(context).size.height *
                                         0.02),
@@ -942,11 +932,11 @@ class _OrderDetailState extends State<OrderDetail> {
                                 city,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: Colors.black,
+                                style:TextStyle(
+                                    fontFamily: 'Poppins', color: Colors.black,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.025,
+                                    MediaQuery.of(context).size.width *
+                                        0.025,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -961,11 +951,11 @@ class _OrderDetailState extends State<OrderDetail> {
                                 time,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: themeColor,
+                                style: TextStyle(
+                                    fontFamily: 'Poppins', color: themeColor,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.025,
+                                    MediaQuery.of(context).size.width *
+                                        0.025,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -988,20 +978,20 @@ class _OrderDetailState extends State<OrderDetail> {
                                 address,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: Colors.grey,
+                                style:TextStyle(
+                                    fontFamily: 'Poppins', color: Colors.grey,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.025,
+                                    MediaQuery.of(context).size.width *
+                                        0.025,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
                             Text(
                               distance,
-                              style: MyTextStyle.poppins().copyWith(
-                                  color: black,
+                              style:TextStyle(
+                                  fontFamily: 'Poppins',color: black,
                                   fontSize:
-                                      MediaQuery.of(context).size.width * 0.025,
+                                  MediaQuery.of(context).size.width * 0.025,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -1024,28 +1014,28 @@ class _OrderDetailState extends State<OrderDetail> {
                             widget.orderData["vehicle"].toString() == "CAR"
                                 ? car
                                 : widget.orderData["vehicle"].toString() ==
-                                        "MINI TRUCK"
-                                    ? mini_truck
-                                    : widget.orderData["vehicle"].toString() ==
-                                            "BIKE"
-                                        ? cycle
-                                        : widget.orderData["vehicle"]
-                                                    .toString() ==
-                                                "SCOOTER"
-                                            ? scooter
-                                            : widget.orderData["vehicle"]
-                                                        .toString() ==
-                                                    "TRUCK"
-                                                ? truck
-                                                : van,
+                                "MINI TRUCK"
+                                ? mini_truck
+                                : widget.orderData["vehicle"].toString() ==
+                                "BIKE"
+                                ? cycle
+                                : widget.orderData["vehicle"]
+                                .toString() ==
+                                "SCOOTER"
+                                ? scooter
+                                : widget.orderData["vehicle"]
+                                .toString() ==
+                                "TRUCK"
+                                ? truck
+                                : van,
                           ),
                         ),
                       ),
                     ),
                     Text(
                       vehicle,
-                      style: MyTextStyle.poppins().copyWith(
-                          color: Colors.black,
+                      style: TextStyle(
+                          fontFamily: 'Poppins',color: Colors.black,
                           fontSize: MediaQuery.of(context).size.width * 0.025,
                           fontWeight: FontWeight.bold),
                     )
@@ -1076,28 +1066,27 @@ class _OrderDetailState extends State<OrderDetail> {
                   ParcelDescription.tr,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
-                  style: MyTextStyle.poppins().copyWith(
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
                       color: themeColor,
                       fontSize: MediaQuery.of(context).size.width * 0.032,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
-                  height: 10.h,
-                ),
                 Container(
-                  // color: Colors.amber,
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: MediaQuery.of(context).size.height * 0.13,
-                  padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Color(0xffD4AF37))),
+                      color: white,
+                      border: Border.all(color: orange)
+                  ),
+                  padding: EdgeInsets.all(5),
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: MediaQuery.of(context).size.height * 0.14,
                   child: Text(
                     // "asdfk lkasd fl ilsdjf  lasjdf l jlsdfk lkasjdf  lkasjdf l llasdf",
                     widget.orderData['pickupParcelDesc'].toString(),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 6,
-                    style: MyTextStyle.poppins().copyWith(
-                        color: Colors.black,
+                    style: TextStyle(
+                        fontFamily: 'Poppins', color: Colors.black,
                         fontSize: MediaQuery.of(context).size.width * 0.032,
                         fontWeight: FontWeight.bold),
                   ),

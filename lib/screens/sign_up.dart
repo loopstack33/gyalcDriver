@@ -78,8 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: themeColor,
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w900,
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.06)),
+                              fontSize:15)),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -264,9 +263,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               top: MediaQuery.of(context).size.height *
                                   0.01, // HERE THE IMPORTANT PART
                             ),
-                            prefixIcon: Image.asset(
-                              messageimage,
-                              scale: 2.7,
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: lightGrey,
                             ),
                             labelStyle: const TextStyle(),
                             border: OutlineInputBorder(
@@ -453,9 +452,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         color: Colors.white,
                                         fontFamily: 'Poppins',
                                         fontWeight: FontWeight.bold,
-                                        fontSize:
-                                            MediaQuery.of(context).size.width *
-                                                0.045),
+                                        fontSize:13),
                                   ),
                                 ),
                               ),

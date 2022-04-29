@@ -40,7 +40,6 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
   Widget build(BuildContext context) {
     bool loading = Provider.of<AuthProvider>(context).loading;
     return Scaffold(
-      resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: Form(
           key: _formKey,
@@ -50,7 +49,7 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
               SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.21,
+
                   width: MediaQuery.of(context).size.width,
                   child: Padding(
                     padding: EdgeInsets.only(
@@ -95,7 +94,7 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                         boxShadow: [
                                           BoxShadow(
                                             color:
-                                                Colors.black.withOpacity(0.9),
+                                            Colors.black.withOpacity(0.9),
                                             // spreadRadius: 5,
                                             blurRadius: 7,
 
@@ -105,41 +104,41 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                   ),
                                   vehiImage == null
                                       ? Image.asset(
-                                          cameraimage,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.12,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.17,
-                                        )
+                                    cameraimage,
+                                    height: MediaQuery.of(context)
+                                        .size
+                                        .height *
+                                        0.12,
+                                    width: MediaQuery.of(context)
+                                        .size
+                                        .width *
+                                        0.17,
+                                  )
                                       : Container(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.12,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.27,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            image: DecorationImage(
-                                              image: FileImage(vehiImage!),
-                                              fit: BoxFit.fill,
-                                            ),
-                                          ),
-                                          child:
-                                              null /* add child content here */,
-                                        ),
+                                    height: MediaQuery.of(context)
+                                        .size
+                                        .height *
+                                        0.12,
+                                    width: MediaQuery.of(context)
+                                        .size
+                                        .width *
+                                        0.27,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                      BorderRadius.circular(25),
+                                      image: DecorationImage(
+                                        image: FileImage(vehiImage!),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                    child:
+                                    null /* add child content here */,
+                                  ),
                                 ],
                               ),
                               SizedBox(
                                 width:
-                                    MediaQuery.of(context).size.width * 0.035,
+                                MediaQuery.of(context).size.width * 0.035,
                               ),
                               SizedBox(
                                 width: 200,
@@ -149,8 +148,8 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                         decoration: TextDecoration.underline,
                                         fontWeight: FontWeight.bold,
                                         fontSize:
-                                            MediaQuery.of(context).size.width *
-                                                0.04)),
+                                        MediaQuery.of(context).size.width *
+                                            0.04)),
                               ),
                             ],
                           ),
@@ -161,7 +160,7 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                     ),
                   )),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.78,
+                height: MediaQuery.of(context).size.height * 0.65,
                 width: MediaQuery.of(context).size.width,
                 child: ListView(
                   children: [
@@ -184,8 +183,8 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                     color: themeColor,
                                     fontWeight: FontWeight.bold,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.04)),
+                                    MediaQuery.of(context).size.width *
+                                        0.04)),
                           ),
                           TextFormField(
                             controller: _authProvider.companyController,
@@ -223,8 +222,8 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                     color: themeColor,
                                     fontWeight: FontWeight.bold,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.04)),
+                                    MediaQuery.of(context).size.width *
+                                        0.04)),
                           ),
                           TextFormField(
                               controller: _authProvider.engineController,
@@ -264,12 +263,12 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                     color: themeColor,
                                     fontWeight: FontWeight.bold,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.04)),
+                                    MediaQuery.of(context).size.width *
+                                        0.04)),
                           ),
                           TextFormField(
                               controller:
-                                  _authProvider.registrationNumberController,
+                              _authProvider.registrationNumberController,
                               textAlignVertical: TextAlignVertical.center,
                               textAlign: TextAlign.left,
                               maxLines: 1,
@@ -307,8 +306,8 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                     color: themeColor,
                                     fontWeight: FontWeight.bold,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.04)),
+                                    MediaQuery.of(context).size.width *
+                                        0.04)),
                           ),
                           TextFormField(
                               controller: _authProvider.carDesignController,
@@ -349,8 +348,8 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                     color: themeColor,
                                     fontWeight: FontWeight.bold,
                                     fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.04)),
+                                    MediaQuery.of(context).size.width *
+                                        0.04)),
                           ),
                           TextFormField(
                               controller: _authProvider.chassisNumberController,
@@ -386,71 +385,71 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
 
                           loading
                               ? Center(
-                                  child: CircularProgressIndicator(
-                                  color: themeColor,
-                                ))
+                              child: CircularProgressIndicator(
+                                color: themeColor,
+                              ))
                               : Center(
-                                  child: SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.07,
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.5,
-                                    child: MaterialButton(
-                                      elevation: 5,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      onPressed: () async {
-                                        if (_formKey.currentState!.validate()) {
-                                          print("Validate");
-                                          if (vehiImage == null) {
-                                            MyMotionToast.warning(
-                                                context,
-                                                "Image Required".tr,
-                                                "Add your Vehicle image".tr);
-                                          } else {
-                                            print("not Validate");
-                                            await AuthServices.signUp(
-                                                context,
-                                                _authProvider
-                                                    .nameController.text,
-                                                _authProvider
-                                                    .emailController.text,
-                                                _authProvider
-                                                    .passwordController.text,
-                                                _authProvider
-                                                    .phoneNumberController.text,
-                                                widget.userImg,
-                                                vehiImage,
-                                                _authProvider
-                                                    .companyController.text,
-                                                _authProvider
-                                                    .engineController.text,
-                                                _authProvider
-                                                    .registrationNumberController
-                                                    .text,
-                                                _authProvider
-                                                    .carDesignController.text,
-                                                _authProvider
-                                                    .chassisNumberController
-                                                    .text);
-                                          }
-                                        }
-                                      },
-                                      color: themeColor,
-                                      child: Text(
-                                        SignUp.toUpperCase().tr,
-                                        style: MyTextStyle.roboto().copyWith(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.05),
-                                      ),
-                                    ),
-                                  ),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height *
+                                  0.07,
+                              width:
+                              MediaQuery.of(context).size.width * 0.5,
+                              child: MaterialButton(
+                                elevation: 5,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    BorderRadius.circular(5)),
+                                onPressed: () async {
+                                  if (_formKey.currentState!.validate()) {
+                                    print("Validate");
+                                    if (vehiImage == null) {
+                                      MyMotionToast.warning(
+                                          context,
+                                          "Image Required".tr,
+                                          "Add your Vehicle image".tr);
+                                    } else {
+                                      print("not Validate");
+                                      await AuthServices.signUp(
+                                          context,
+                                          _authProvider
+                                              .nameController.text,
+                                          _authProvider
+                                              .emailController.text,
+                                          _authProvider
+                                              .passwordController.text,
+                                          _authProvider
+                                              .phoneNumberController.text,
+                                          widget.userImg,
+                                          vehiImage,
+                                          _authProvider
+                                              .companyController.text,
+                                          _authProvider
+                                              .engineController.text,
+                                          _authProvider
+                                              .registrationNumberController
+                                              .text,
+                                          _authProvider
+                                              .carDesignController.text,
+                                          _authProvider
+                                              .chassisNumberController
+                                              .text);
+                                    }
+                                  }
+                                },
+                                color: themeColor,
+                                child: Text(
+                                  SignUp.toUpperCase().tr,
+                                  style: MyTextStyle.roboto().copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: MediaQuery.of(context)
+                                          .size
+                                          .width *
+                                          0.05),
                                 ),
+                              ),
+                            ),
+                          ),
 
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.03,
@@ -465,8 +464,8 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                       color: Colors.grey,
                                       fontWeight: FontWeight.bold,
                                       fontSize:
-                                          MediaQuery.of(context).size.width *
-                                              0.035),
+                                      MediaQuery.of(context).size.width *
+                                          0.035),
                                 ),
                                 InkWell(
                                   onTap: () {
@@ -479,11 +478,11 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
                                           color: themeColor,
                                           fontWeight: FontWeight.bold,
                                           fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                              .size
+                                              .width *
                                               0.035
-                                          // fontWeight: FontWeight.bold
-                                          )),
+                                        // fontWeight: FontWeight.bold
+                                      )),
                                 )
                               ],
                             ),
@@ -575,38 +574,6 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
     );
   }
 
-  // Future uploadImageToFirebase() async {
-  //   File fileName = _authProvider.imageLinkVehicle;
-  //   var uuid = const Uuid();
-  //   firebase_storage.Reference firebaseStorageRef = firebase_storage
-  //       .FirebaseStorage.instance
-  //       .ref()
-  //       .child('Upload_manager/images+${uuid.v4()}');
-  //   firebase_storage.UploadTask uploadTask =
-  //       firebaseStorageRef.putFile(fileName);
-  //   firebase_storage.TaskSnapshot taskSnapshot =
-  //       await uploadTask.whenComplete(() async {
-  //     String img = await uploadTask.snapshot.ref.getDownloadURL();
-
-  //     setState(() {
-  //       _authProvider.imageURLVehicle = img;
-  //     });
-  //     AuthServices.signUp(
-  //       context,
-  //       _authProvider.emailController.text,
-  //       _authProvider.passwordController.text,
-  //       _authProvider.nameController.text,
-  //       _authProvider.phoneNumberController.text,
-  //       _authProvider.imageURLSignUp,
-  //       _authProvider.companyController.text,
-  //       _authProvider.engineController.text,
-  //       _authProvider.registrationNumberController.text,
-  //       _authProvider.carDesignController.text,
-  //       _authProvider.chassisNumberController.text,
-  //       _authProvider.imageURLVehicle,
-  //     );
-  //   });
-  // }
 
   Future<void> openFilePicker() async {
     print("File Picker");
