@@ -49,8 +49,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
         key: _formKey,
         child: ListView(
           children: [
+
             Container(
-              height: MediaQuery.of(context).size.height * 0.47,
+              height: MediaQuery.of(context).size.height * 0.30,
               width: MediaQuery.of(context).size.width,
               alignment: Alignment.bottomLeft,
               decoration: BoxDecoration(
@@ -77,8 +78,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           style: MyTextStyle.poppins().copyWith(
                               color: themeColor,
                               fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w900,
-                              fontSize:15)),
+                              fontWeight: FontWeight.bold,
+                              fontSize:16)),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -89,7 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.bold,
                               fontSize:
-                                  MediaQuery.of(context).size.width * 0.045)),
+                              MediaQuery.of(context).size.width * 0.045)),
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.012,
@@ -105,7 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             children: [
                               Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.12,
+                                MediaQuery.of(context).size.height * 0.12,
                                 width: MediaQuery.of(context).size.width * 0.27,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(25),
@@ -120,28 +121,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                               _image == null
                                   ? Image.asset(
-                                      cameraimage,
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.12,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.17,
-                                    )
+                                cameraimage,
+                                height:
+                                MediaQuery.of(context).size.height *
+                                    0.12,
+                                width: MediaQuery.of(context).size.width *
+                                    0.17,
+                              )
                                   : Container(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.12,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.27,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        image: DecorationImage(
-                                          image: FileImage(_image!),
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ),
-                                      child: null /* add child content here */,
-                                    ),
+                                height:
+                                MediaQuery.of(context).size.height *
+                                    0.12,
+                                width: MediaQuery.of(context).size.width *
+                                    0.27,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25),
+                                  image: DecorationImage(
+                                    image: FileImage(_image!),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                                child: null /* add child content here */,
+                              ),
                               // Image.file(
                               //     _image!,
                               //     height:
@@ -162,63 +163,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.bold,
                                   fontSize:
-                                      MediaQuery.of(context).size.width * 0.045,
+                                  MediaQuery.of(context).size.width * 0.045,
                                   decoration: TextDecoration.underline)),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.022,
-                      ),
-                      child: Text(Fullname.tr,
-                          style: MyTextStyle.poppins().copyWith(
-                              color: themeColor,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.04)),
-                    ),
-                    TextFormField(
-                      keyboardType: TextInputType.text,
-                      textCapitalization: TextCapitalization.words,
-                      controller: _authProvider.nameController,
-                      textAlignVertical: TextAlignVertical.center,
-                      textAlign: TextAlign.left,
-                      maxLines: 1,
-                      validator: _authProvider.requiredValidator,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        fontFamily: 'Poppins',
-                      ),
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height *
-                              0.01, // HERE THE IMPORTANT PART
-                        ),
-                        prefixIcon: Image.asset(
-                          profileimage,
-                          scale: 2.7,
-                        ),
-                        labelStyle: const TextStyle(),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: themeColor),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: themeColor),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: themeColor),
-                        ),
-                        hintText: "Your_Name".tr,
-                      ),
-                    ),
+
                   ],
                 ),
               ),
             ),
+
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.53,
+              height: MediaQuery.of(context).size.height * 0.7,
               width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: EdgeInsets.only(
@@ -232,7 +189,53 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.00,
+                          top: MediaQuery.of(context).size.height * 0.022,
+                        ),
+                        child: Text(Fullname.tr,
+                            style: MyTextStyle.poppins().copyWith(
+                                color: themeColor,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize:
+                                MediaQuery.of(context).size.width * 0.04)),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.text,
+                        textCapitalization: TextCapitalization.words,
+                        controller: _authProvider.nameController,
+                        textAlignVertical: TextAlignVertical.center,
+                        textAlign: TextAlign.left,
+                        maxLines: 1,
+                        validator: _authProvider.requiredValidator,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          fontFamily: 'Poppins',
+                        ),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height *
+                                0.01, // HERE THE IMPORTANT PART
+                          ),
+                          prefixIcon: Image.asset(
+                            profileimage,
+                            scale: 2.7,
+                          ),
+                          labelStyle: const TextStyle(),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          hintText: "Your_Name".tr,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.02,
                           // bottom: MediaQuery.of(context).size.width *0.04
                         ),
                         child: Text(Email.tr,
@@ -457,6 +460,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                               ),
                             ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.037,
+                      ),
                     ],
                   ),
                 ),

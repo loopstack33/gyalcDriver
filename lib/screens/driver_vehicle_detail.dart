@@ -48,451 +48,426 @@ class _DriverVehicleDetailScreenState extends State<DriverVehicleDetailScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
+              Center(
+                child: Text("Enter your Vehicle Information".tr,
+                    style: MyTextStyle.poppins().copyWith(
+                        color: themeColor,
+                        fontWeight: FontWeight.w900,
+                        fontSize: MediaQuery.of(context).size.width *
+                            0.054)),
+              ),
               SizedBox(
-
-                  width: MediaQuery.of(context).size.width,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width * 0.03,
-                      right: MediaQuery.of(context).size.width * 0.02,
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.012,
-                        ),
-                        Center(
-                          child: Text("Enter your Vehicle Information".tr,
-                              style: MyTextStyle.poppins().copyWith(
-                                  color: themeColor,
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: MediaQuery.of(context).size.width *
-                                      0.054)),
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            openFilePicker();
-                          },
-                          child: Row(
-                            children: [
-                              Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.12,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.27,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        color: themeColor,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color:
-                                            Colors.black.withOpacity(0.9),
-                                            // spreadRadius: 5,
-                                            blurRadius: 7,
-
-                                            offset: const Offset(0, 6),
-                                          ),
-                                        ]),
-                                  ),
-                                  vehiImage == null
-                                      ? Image.asset(
-                                    cameraimage,
-                                    height: MediaQuery.of(context)
-                                        .size
-                                        .height *
-                                        0.12,
-                                    width: MediaQuery.of(context)
-                                        .size
-                                        .width *
-                                        0.17,
-                                  )
-                                      : Container(
-                                    height: MediaQuery.of(context)
-                                        .size
-                                        .height *
-                                        0.12,
-                                    width: MediaQuery.of(context)
-                                        .size
-                                        .width *
-                                        0.27,
-                                    decoration: BoxDecoration(
-                                      borderRadius:
-                                      BorderRadius.circular(25),
-                                      image: DecorationImage(
-                                        image: FileImage(vehiImage!),
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                    child:
-                                    null /* add child content here */,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width:
-                                MediaQuery.of(context).size.width * 0.035,
-                              ),
-                              SizedBox(
-                                width: 200,
-                                child: Text(AddYourvehicle.tr,
-                                    style: MyTextStyle.poppins().copyWith(
-                                        color: themeColor,
-                                        decoration: TextDecoration.underline,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.04)),
-                              ),
-                            ],
-                          ),
-                        ),
-                        // SizedBox(height: MediaQuery.of(context).size.height *0.05,),
-                        // SizedBox(height: 70,),
-                      ],
-                    ),
-                  )),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.65,
-                width: MediaQuery.of(context).size.width,
-                child: ListView(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.07,
-                          right: MediaQuery.of(context).size.width * 0.07,
-                          top: MediaQuery.of(context).size.height * 0.02),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: GestureDetector(
+                  onTap: () {
+                    openFilePicker();
+                  },
+                  child: Row(
+                    children: [
+                      Stack(
+                        alignment: Alignment.center,
                         children: [
-                          Padding(
-                            padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.02,
-                              // bottom: MediaQuery.of(context).size.width *0.04
-                            ),
-                            child: Text(CompanyTitle.tr,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: themeColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize:
-                                    MediaQuery.of(context).size.width *
-                                        0.04)),
-                          ),
-                          TextFormField(
-                            controller: _authProvider.companyController,
-                            textAlignVertical: TextAlignVertical.center,
-                            textAlign: TextAlign.left,
-                            maxLines: 1,
-                            validator: _authProvider.requiredValidator,
-                            style: const TextStyle(fontSize: 13),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.only(
-                                left: 10,
-                                top: MediaQuery.of(context).size.height *
-                                    0.01, // HERE THE IMPORTANT PART
-                              ),
-
-                              labelStyle: const TextStyle(),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: themeColor),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: themeColor),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: themeColor),
-                              ),
-                              hintText: "",
-                              // labelText:"Your Name"
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height * 0.02),
-                            child: Text(EngineNumber.tr,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: themeColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize:
-                                    MediaQuery.of(context).size.width *
-                                        0.04)),
-                          ),
-                          TextFormField(
-                              controller: _authProvider.engineController,
-                              textAlignVertical: TextAlignVertical.center,
-                              textAlign: TextAlign.left,
-                              maxLines: 1,
-                              validator: _authProvider.requiredValidator,
-                              style: const TextStyle(fontSize: 13),
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.only(
-                                  left: 10,
-                                  top: MediaQuery.of(context).size.height *
-                                      0.01, // HERE THE IMPORTANT PART
-                                ),
-                                // prefixIcon: Image.asset(messageimage,scale: 2.5,)
-                                // ,
-                                labelStyle: const TextStyle(),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                hintText: "",
-                                // labelText:"Your Name"
-                              )),
-                          Padding(
-                            padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.02,
-                              // bottom: MediaQuery.of(context).size.width *0.04
-                            ),
-                            child: Text(RegistrationNumber.tr,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: themeColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize:
-                                    MediaQuery.of(context).size.width *
-                                        0.04)),
-                          ),
-                          TextFormField(
-                              controller:
-                              _authProvider.registrationNumberController,
-                              textAlignVertical: TextAlignVertical.center,
-                              textAlign: TextAlign.left,
-                              maxLines: 1,
-                              validator: _authProvider.requiredValidator,
-                              style: const TextStyle(fontSize: 13),
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.only(
-                                  left: 10,
-                                  top: MediaQuery.of(context).size.height *
-                                      0.01, // HERE THE IMPORTANT PART
-                                ),
-                                // prefixIcon: Image.asset(lockimage,scale: 2.5,)
-                                // ,
-                                labelStyle: const TextStyle(),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                hintText: "",
-                                // labelText:"Your Name"
-                              )),
-
-                          Padding(
-                            padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.02,
-                              // bottom: MediaQuery.of(context).size.width *0.04
-                            ),
-                            child: Text(CarDesign.tr,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: themeColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize:
-                                    MediaQuery.of(context).size.width *
-                                        0.04)),
-                          ),
-                          TextFormField(
-                              controller: _authProvider.carDesignController,
-                              textAlignVertical: TextAlignVertical.center,
-                              textAlign: TextAlign.left,
-                              maxLines: 1,
-                              validator: _authProvider.requiredValidator,
-                              style: const TextStyle(fontSize: 13),
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.only(
-                                  left: 10,
-                                  top: MediaQuery.of(context).size.height *
-                                      0.01, // HERE THE IMPORTANT PART
-                                ),
-                                // prefixIcon: Image.asset(profileimage,scale: 2.5,)
-                                // ,
-                                labelStyle: const TextStyle(),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                hintText: "",
-                                // labelText:"Your Name"
-                              )),
-                          // SizedBox(height: MediaQuery.of(context).size.height *0.02,),
-                          Padding(
-                            padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.02,
-                              // bottom: MediaQuery.of(context).size.width *0.04
-                            ),
-                            child: Text(ChassisNumber.tr,
-                                style: MyTextStyle.poppins().copyWith(
-                                    color: themeColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize:
-                                    MediaQuery.of(context).size.width *
-                                        0.04)),
-                          ),
-                          TextFormField(
-                              controller: _authProvider.chassisNumberController,
-                              textAlignVertical: TextAlignVertical.center,
-                              textAlign: TextAlign.left,
-                              maxLines: 1,
-                              validator: _authProvider.requiredValidator,
-                              style: const TextStyle(fontSize: 13),
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.only(
-                                  left: 10,
-                                  top: MediaQuery.of(context).size.height *
-                                      0.01, // HERE THE IMPORTANT PART
-                                ),
-                                // prefixIcon: Image.asset(profileimage,scale: 2.5,)
-                                // ,
-                                labelStyle: const TextStyle(),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: themeColor),
-                                ),
-                                hintText: "",
-                                // labelText:"Your Name"
-                              )),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.025,
-                          ),
-
-                          loading
-                              ? Center(
-                              child: CircularProgressIndicator(
+                          Container(
+                            height: MediaQuery.of(context).size.height *
+                                0.12,
+                            width: MediaQuery.of(context).size.width *
+                                0.27,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
                                 color: themeColor,
-                              ))
-                              : Center(
-                            child: SizedBox(
-                              height: MediaQuery.of(context).size.height *
-                                  0.07,
-                              width:
-                              MediaQuery.of(context).size.width * 0.5,
-                              child: MaterialButton(
-                                elevation: 5,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                    BorderRadius.circular(5)),
-                                onPressed: () async {
-                                  if (_formKey.currentState!.validate()) {
-                                    print("Validate");
-                                    if (vehiImage == null) {
-                                      MyMotionToast.warning(
-                                          context,
-                                          "Image Required".tr,
-                                          "Add your Vehicle image".tr);
-                                    } else {
-                                      print("not Validate");
-                                      await AuthServices.signUp(
-                                          context,
-                                          _authProvider
-                                              .nameController.text,
-                                          _authProvider
-                                              .emailController.text,
-                                          _authProvider
-                                              .passwordController.text,
-                                          _authProvider
-                                              .phoneNumberController.text,
-                                          widget.userImg,
-                                          vehiImage,
-                                          _authProvider
-                                              .companyController.text,
-                                          _authProvider
-                                              .engineController.text,
-                                          _authProvider
-                                              .registrationNumberController
-                                              .text,
-                                          _authProvider
-                                              .carDesignController.text,
-                                          _authProvider
-                                              .chassisNumberController
-                                              .text);
-                                    }
-                                  }
-                                },
-                                color: themeColor,
-                                child: Text(
-                                  SignUp.toUpperCase().tr,
-                                  style: MyTextStyle.roboto().copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: MediaQuery.of(context)
-                                          .size
-                                          .width *
-                                          0.05),
-                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color:
+                                    Colors.black.withOpacity(0.9),
+                                    // spreadRadius: 5,
+                                    blurRadius: 7,
+
+                                    offset: const Offset(0, 6),
+                                  ),
+                                ]),
+                          ),
+                          vehiImage == null
+                              ? Image.asset(
+                            cameraimage,
+                            height: MediaQuery.of(context)
+                                .size
+                                .height *
+                                0.12,
+                            width: MediaQuery.of(context)
+                                .size
+                                .width *
+                                0.17,
+                          )
+                              : Container(
+                            height: MediaQuery.of(context)
+                                .size
+                                .height *
+                                0.12,
+                            width: MediaQuery.of(context)
+                                .size
+                                .width *
+                                0.27,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                              BorderRadius.circular(25),
+                              image: DecorationImage(
+                                image: FileImage(vehiImage!),
+                                fit: BoxFit.fill,
                               ),
                             ),
-                          ),
-
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.03,
-                          ),
-                          Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  Alreadyhaveanaccount.tr,
-                                  style: MyTextStyle.poppins().copyWith(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize:
-                                      MediaQuery.of(context).size.width *
-                                          0.035),
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.of(context).pushReplacement(
-                                        MaterialPageRoute(
-                                            builder: (context) => LoginPage()));
-                                  },
-                                  child: Text(login.tr,
-                                      style: MyTextStyle.poppins().copyWith(
-                                          color: themeColor,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: MediaQuery.of(context)
-                                              .size
-                                              .width *
-                                              0.035
-                                        // fontWeight: FontWeight.bold
-                                      )),
-                                )
-                              ],
-                            ),
+                            child:
+                            null /* add child content here */,
                           ),
                         ],
                       ),
-                    )
-                  ],
+                      SizedBox(
+                        width:
+                        MediaQuery.of(context).size.width * 0.035,
+                      ),
+                      SizedBox(
+                        width: 200,
+                        child: Text(AddYourvehicle.tr,
+                            style: MyTextStyle.poppins().copyWith(
+                                color: themeColor,
+                                decoration: TextDecoration.underline,
+                                fontWeight: FontWeight.bold,
+                                fontSize:
+                                MediaQuery.of(context).size.width *
+                                    0.04)),
+                      ),
+                    ],
+                  ),
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.07,
+                    right: MediaQuery.of(context).size.width * 0.07,
+                    top: MediaQuery.of(context).size.height * 0.02),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.02,
+                        // bottom: MediaQuery.of(context).size.width *0.04
+                      ),
+                      child: Text(CompanyTitle.tr,
+                          style: MyTextStyle.poppins().copyWith(
+                              color: themeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize:
+                              MediaQuery.of(context).size.width *
+                                  0.04)),
+                    ),
+                    TextFormField(
+                      controller: _authProvider.companyController,
+                      textAlignVertical: TextAlignVertical.center,
+                      textAlign: TextAlign.left,
+                      maxLines: 1,
+                      validator: _authProvider.requiredValidator,
+                      style: const TextStyle(fontSize: 13),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(
+                          left: 10,
+                          top: MediaQuery.of(context).size.height *
+                              0.01, // HERE THE IMPORTANT PART
+                        ),
+
+                        labelStyle: const TextStyle(),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: themeColor),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: themeColor),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: themeColor),
+                        ),
+                        hintText: "",
+                        // labelText:"Your Name"
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.02),
+                      child: Text(EngineNumber.tr,
+                          style: MyTextStyle.poppins().copyWith(
+                              color: themeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize:
+                              MediaQuery.of(context).size.width *
+                                  0.04)),
+                    ),
+                    TextFormField(
+                        controller: _authProvider.engineController,
+                        textAlignVertical: TextAlignVertical.center,
+                        textAlign: TextAlign.left,
+                        maxLines: 1,
+                        validator: _authProvider.requiredValidator,
+                        style: const TextStyle(fontSize: 13),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            left: 10,
+                            top: MediaQuery.of(context).size.height *
+                                0.01, // HERE THE IMPORTANT PART
+                          ),
+                          // prefixIcon: Image.asset(messageimage,scale: 2.5,)
+                          // ,
+                          labelStyle: const TextStyle(),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          hintText: "",
+                          // labelText:"Your Name"
+                        )),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.02,
+                        // bottom: MediaQuery.of(context).size.width *0.04
+                      ),
+                      child: Text(RegistrationNumber.tr,
+                          style: MyTextStyle.poppins().copyWith(
+                              color: themeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize:
+                              MediaQuery.of(context).size.width *
+                                  0.04)),
+                    ),
+                    TextFormField(
+                        controller:
+                        _authProvider.registrationNumberController,
+                        textAlignVertical: TextAlignVertical.center,
+                        textAlign: TextAlign.left,
+                        maxLines: 1,
+                        validator: _authProvider.requiredValidator,
+                        style: const TextStyle(fontSize: 13),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            left: 10,
+                            top: MediaQuery.of(context).size.height *
+                                0.01, // HERE THE IMPORTANT PART
+                          ),
+                          // prefixIcon: Image.asset(lockimage,scale: 2.5,)
+                          // ,
+                          labelStyle: const TextStyle(),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          hintText: "",
+                          // labelText:"Your Name"
+                        )),
+
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.02,
+                        // bottom: MediaQuery.of(context).size.width *0.04
+                      ),
+                      child: Text(CarDesign.tr,
+                          style: MyTextStyle.poppins().copyWith(
+                              color: themeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize:
+                              MediaQuery.of(context).size.width *
+                                  0.04)),
+                    ),
+                    TextFormField(
+                        controller: _authProvider.carDesignController,
+                        textAlignVertical: TextAlignVertical.center,
+                        textAlign: TextAlign.left,
+                        maxLines: 1,
+                        validator: _authProvider.requiredValidator,
+                        style: const TextStyle(fontSize: 13),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            left: 10,
+                            top: MediaQuery.of(context).size.height *
+                                0.01, // HERE THE IMPORTANT PART
+                          ),
+                          // prefixIcon: Image.asset(profileimage,scale: 2.5,)
+                          // ,
+                          labelStyle: const TextStyle(),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          hintText: "",
+                          // labelText:"Your Name"
+                        )),
+                    // SizedBox(height: MediaQuery.of(context).size.height *0.02,),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.02,
+                        // bottom: MediaQuery.of(context).size.width *0.04
+                      ),
+                      child: Text(ChassisNumber.tr,
+                          style: MyTextStyle.poppins().copyWith(
+                              color: themeColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize:
+                              MediaQuery.of(context).size.width *
+                                  0.04)),
+                    ),
+                    TextFormField(
+                        controller: _authProvider.chassisNumberController,
+                        textAlignVertical: TextAlignVertical.center,
+                        textAlign: TextAlign.left,
+                        maxLines: 1,
+                        validator: _authProvider.requiredValidator,
+                        style: const TextStyle(fontSize: 13),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            left: 10,
+                            top: MediaQuery.of(context).size.height *
+                                0.01, // HERE THE IMPORTANT PART
+                          ),
+                          // prefixIcon: Image.asset(profileimage,scale: 2.5,)
+                          // ,
+                          labelStyle: const TextStyle(),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: themeColor),
+                          ),
+                          hintText: "",
+                          // labelText:"Your Name"
+                        )),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.025,
+                    ),
+
+                    loading
+                        ? Center(
+                        child: CircularProgressIndicator(
+                          color: themeColor,
+                        ))
+                        : Center(
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height *
+                            0.07,
+                        width:
+                        MediaQuery.of(context).size.width * 0.5,
+                        child: MaterialButton(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                              BorderRadius.circular(5)),
+                          onPressed: () async {
+                            if (_formKey.currentState!.validate()) {
+                              print("Validate");
+                              if (vehiImage == null) {
+                                MyMotionToast.warning(
+                                    context,
+                                    "Image Required".tr,
+                                    "Add your Vehicle image".tr);
+                              } else {
+                                print("not Validate");
+                                await AuthServices.signUp(
+                                    context,
+                                    _authProvider
+                                        .nameController.text,
+                                    _authProvider
+                                        .emailController.text,
+                                    _authProvider
+                                        .passwordController.text,
+                                    _authProvider
+                                        .phoneNumberController.text,
+                                    widget.userImg,
+                                    vehiImage,
+                                    _authProvider
+                                        .companyController.text,
+                                    _authProvider
+                                        .engineController.text,
+                                    _authProvider
+                                        .registrationNumberController
+                                        .text,
+                                    _authProvider
+                                        .carDesignController.text,
+                                    _authProvider
+                                        .chassisNumberController
+                                        .text);
+                              }
+                            }
+                          },
+                          color: themeColor,
+                          child: Text(
+                            SignUp.toUpperCase().tr,
+                            style: MyTextStyle.roboto().copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: MediaQuery.of(context)
+                                    .size
+                                    .width *
+                                    0.05),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.03,
+                    ),
+                    Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            Alreadyhaveanaccount.tr,
+                            style: MyTextStyle.poppins().copyWith(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                fontSize:
+                                MediaQuery.of(context).size.width *
+                                    0.035),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginPage()));
+                            },
+                            child: Text(login.tr,
+                                style: MyTextStyle.poppins().copyWith(
+                                    color: themeColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: MediaQuery.of(context)
+                                        .size
+                                        .width *
+                                        0.035
+                                  // fontWeight: FontWeight.bold
+                                )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
